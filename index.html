@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Join Room</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="join-container">
+        <h2>Join Video Call</h2>
+
+        <input id="username" placeholder="Enter username" />
+        <input id="room" placeholder="Enter room name" />
+
+        <button onclick="join()">Join</button>
+    </div>
+
+    <script>
+        function join() {
+            const username = document.getElementById("username").value.trim();
+            const room = document.getElementById("room").value.trim();
+
+            if (!username || !room) {
+                alert("Enter username and room name");
+                return;
+            }
+
+            window.location.href = `video.html?username=${username}&room=${room}`;
+        }
+    </script>
+
+</body>
+
+</html>
